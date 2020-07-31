@@ -38,3 +38,11 @@ Route::prefix('/login')->group(function (){
 //    Route::any('/add','Admin\AdminController@add');
 //    Route::any('/pay','Admin\AdminController@pay');
 });
+//首页
+Route::prefix('/index')->group(function (){
+//    首页
+   Route::get('/index','Admin\IndexController@index');
+   //详情页
+    Route::get('/desc/{goods_id}','Admin\IndexController@desc');
+
+});
