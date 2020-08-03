@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\ComModel;
 use App\Model\IndexModel;
 use Illuminate\Http\Request;
+//use App\Model\
 
 class IndexController extends Controller
 {
@@ -20,9 +22,12 @@ class IndexController extends Controller
      * 详情页
      */
     public function desc($id){
-        $a=IndexModel::where('goods_id',$id)->first();
-//var_dump($a);die;
-        return view('index.add',['a'=>$a]);
+        $asd=IndexModel::where('goods_id',$id)->first();
+//var_dump($asd);die;
+        //渲染页面传值
 
+        $add=ComModel::get();
+//        var_dump($add);die;
+        return view('index.add',['asd'=>$asd,'add'=>$add]);
     }
 }

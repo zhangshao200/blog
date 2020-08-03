@@ -364,16 +364,16 @@
 
 <!-- shop single -->
 <div class="pages section">
+
     <div class="container">
-        @foreach($a as $v)
         <div class="shop-single">
             <img src="/static/img/shop-single.png" alt="">
-            <h5>{{$v->goods_name}}</h5>
-            <div class="price"> <span>$28</span></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam eaque in non delectus, error iste veniam commodi mollitia, officia possimus, repellendus maiores doloribus provident. Itaque, ab perferendis nemo tempore! Accusamus</p>
+            <h5>{{$asd->goods_name}}</h5>
+            <div class="price">${{$asd->shop_price}} <span>${{$asd->shop_price}}</span></div>
+            <p>{{$asd->goods_name}}</p>
             <button type="button" class="btn button-default">ADD TO CART</button>
         </div>
-        @endforeach
+@foreach($add as $v)
         <div class="review">
             <h5>1 reviews</h5>
             <div class="review-details">
@@ -383,39 +383,44 @@
                     </div>
                     <div class="col s9">
                         <div class="review-title">
-                            <span><strong>John Doe</strong> | Juni 5, 2016 at 9:24 am | <a href="">Reply</a></span>
+                            <span><strong>{{$v->user_name}}</strong> | | <a href="">Reply</a></span>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis accusantium corrupti asperiores et praesentium dolore.</p>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
+
+
         <div class="review-form">
             <div class="review-head">
                 <h5>Post Review in Below</h5>
                 <p>Lorem ipsum dolor sit amet consectetur*</p>
             </div>
             <div class="row">
-                <form class="col s12 form-details">
+                <form action="{{url('http://api.com/user/col')}}" method="post" class="col s12 form-details">
                     <div class="input-field">
-                        <input type="text" required class="validate" placeholder="NAME">
+                        <input type="text" name="user_name" required class="validate" placeholder="名称">
                     </div>
                     <div class="input-field">
-                        <input type="email" class="validate" placeholder="EMAIL" required>
+                        <input type="email" name="user_email" class="validate" placeholder="邮箱" required>
                     </div>
                     <div class="input-field">
-                        <input type="text" class="validate" placeholder="SUBJECT" required>
+                        <input type="text" name="ke" class="validate" placeholder="学科" required>
                     </div>
                     <div class="input-field">
-                        <textarea name="textarea-message" id="textarea1" cols="30" rows="10" class="materialize-textarea" class="validate" placeholder="YOUR REVIEW"></textarea>
+                        <textarea name="textarea" placeholder="你的意见"></textarea>
                     </div>
                     <div class="form-button">
-                        <div class="btn button-default">POST REVIEW</div>
+                        <input type="submit" class="btn button-default" value="POST REVIEW">
+
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
 </div>
 <!-- end shop single -->
 
@@ -454,3 +459,5 @@
 
 </body>
 </html>
+<script>
+</script>
