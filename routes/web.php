@@ -44,5 +44,8 @@ Route::prefix('/index')->group(function (){
    Route::get('/index','Admin\IndexController@index');
    //详情页
     Route::get('/desc/{goods_id}','Admin\IndexController@desc');
-
+    //购物车页面
+    Route::get('/cat','Admin\IndexController@cat');
+    //收货地址
+    Route::get('/site','Admin\IndexController@site');
 });

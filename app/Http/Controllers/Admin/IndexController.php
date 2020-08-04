@@ -30,4 +30,17 @@ class IndexController extends Controller
 //        var_dump($add);die;
         return view('index.add',['asd'=>$asd,'add'=>$add]);
     }
+
+
+    //购物车
+    public function cat(){
+
+        $user=IndexModel::get();
+        return view('index.cat',['user'=>$user]);
+    }
+    //收货地址
+    public function site(){
+        return view('index.site');
+    }
+
 }

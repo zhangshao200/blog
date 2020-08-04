@@ -367,12 +367,17 @@
 
     <div class="container">
         <div class="shop-single">
-            <img src="/static/img/shop-single.png" alt="">
-            <h5>{{$asd->goods_name}}</h5>
-            <div class="price">${{$asd->shop_price}} <span>${{$asd->shop_price}}</span></div>
-            <p>{{$asd->goods_name}}</p>
-            <button type="button" class="btn button-default">ADD TO CART</button>
+            <img id="img" src="{{env('UPLOADS_URL')}}{{$asd->goods_img}}" alt="">
+            <h5 id="goods_name">{{$asd->goods_name}}</h5>
+            <div id="price">${{$asd->shop_price}} <span>${{$asd->shop_price}}</span></div>
+            <p id="name">{{$asd->goods_name}}</p>
+            <a href="{{url('http://www.1911.com/index/cat')}}" class="btn_user button-default">ADD TO CART</a>
         </div>
+
+
+
+
+
 @foreach($add as $v)
         <div class="review">
             <h5>1 reviews</h5>
@@ -420,6 +425,7 @@
             </div>
         </div>
     </div>
+    </form>
 
 </div>
 <!-- end shop single -->
@@ -460,4 +466,10 @@
 </body>
 </html>
 <script>
+   $(".btn_user").click(function () {
+       var img = $("input[id='img']").val();
+
+   })
+
+
 </script>
