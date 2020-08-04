@@ -420,7 +420,7 @@
                 </div>
             </div>
             @endforeach
-        <button class="btn button-default">Process to Checkout</button>
+        <button  class="btn button-default">Process to Checkout</button>
     </div>
 </div>
 <!-- end cart -->
